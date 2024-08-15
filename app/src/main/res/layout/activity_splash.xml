@@ -1,0 +1,55 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F5E4C3"> <!-- Solid color background -->
+
+    <!-- Center the logo horizontally and vertically -->
+    <ImageView
+        android:id="@+id/logoImageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="40dp"
+        android:layout_marginBottom="20dp"
+        android:src="@drawable/demo1"
+        android:contentDescription="School Logo" />
+
+    <!-- "Saraswati Vidyalaya" TextView below the logo and centered horizontally -->
+    <TextView
+        android:id="@+id/schoolNameTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/logoImageView"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="15dp"
+        android:text="Saraswati Shiksha Niketan "
+        android:textColor="#4A4A4A"
+        android:textSize="24sp"
+        android:textStyle="bold" />
+
+    <!-- "Prepared by" TextView centered horizontally and above "TECH" -->
+    <TextView
+        android:id="@+id/preparedByTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/schoolNameTextView"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="300dp"
+        android:text="Prepared by"
+        android:textColor="#4A4A4A"
+        android:textSize="18sp" />
+
+    <!-- "TECH" TextView below the "Prepared by" text and centered horizontally -->
+    <TextView
+        android:id="@+id/preparedByTextView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/preparedByTextView"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="8dp"
+        android:text="Jalpan &amp; Harmit"
+        android:textColor="#4A4A4A"
+        android:textSize="27sp"
+        android:textStyle="bold" />
+
+</RelativeLayout>

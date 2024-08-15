@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "524643375996",
+    "project_id": "saraswati-vidyalaya-1c824",
+    "storage_bucket": "saraswati-vidyalaya-1c824.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:524643375996:android:da7a318ff9b562968ba2f9",
+        "android_client_info": {
+          "package_name": "com.example.saraswatividyalaya"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAq4M7OIAGTf4p5odfO0bbOvIbv4qpoQbE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
