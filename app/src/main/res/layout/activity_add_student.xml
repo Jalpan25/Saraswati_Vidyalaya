@@ -43,7 +43,7 @@
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="20dp"
-            android:text="Student Login"
+            android:text="Student SignUp"
             android:textColor="#4A4A4A"
             android:textSize="18sp"
             android:textStyle="bold" />
@@ -74,64 +74,41 @@
             android:layout_marginTop="20dp"
             android:layout_marginEnd="20dp"
             android:drawableLeft="@drawable/baseline_password_24"
-            android:hint=" Password"
+            android:hint="Password"
             android:inputType="textPassword"
             android:padding="16dp"
             android:minHeight="48dp"
-            android:textColor="#FFFFFF"/>
+            android:textColor="#4A4A4A" />
 
-        <!-- Login Button -->
-        <Button
-            android:id="@+id/loginButton"
+        <!-- ConfirmPassword EditText -->
+        <EditText
+            android:id="@+id/ConformpasswordEditText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@id/passwordEditText"
             android:layout_marginStart="20dp"
             android:layout_marginTop="20dp"
             android:layout_marginEnd="20dp"
+            android:drawableLeft="@drawable/ic_password"
+            android:hint="Confirm Password"
+            android:inputType="textPassword"
+            android:padding="16dp"
+            android:minHeight="48dp"
+            android:textColor="#4A4A4A" />
+        <!-- Singup Button -->
+        <Button
+            android:id="@+id/loginButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/ConformpasswordEditText"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="20dp"
             android:backgroundTint="#008080"
-            android:text="LOGIN"
+            android:text="Create Account"
             android:textColor="#4A4A4A" />
 
-        <!-- Or TextView -->
-        <TextView
-            android:id="@+id/orTextView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/loginButton"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="20dp"
-            android:text="OR"
-            android:textColor="#4A4A4A"
-            android:textSize="16sp" />
 
-        <!-- Teacher Panel Button -->
-        <Button
-            android:id="@+id/teacherPanelButton"
-            android:layout_width="match_parent"
-            android:layout_height="48dp"
-        android:layout_below="@id/orTextView"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="20dp"
-        android:backgroundTint="#008080"
-
-            android:minHeight="48dp"
-        android:text="TEACHER PANEL"
-        android:textColor="#4A4A4A" />
-
-
-        <!-- Privacy Policy TextView -->
-        <TextView
-            android:id="@+id/privacyPolicyTextView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/teacherPanelButton"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="10dp"
-            android:text="By clicking LOGIN, you agree with our Privacy Policy"
-            android:textColor="#4A4A4A"
-            android:textSize="12sp" />
 
     </RelativeLayout>
 
