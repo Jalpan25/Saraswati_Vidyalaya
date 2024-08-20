@@ -11,28 +11,21 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
-public class login extends AppCompatActivity {
+public class teacher_login extends AppCompatActivity {
+
+    Button login;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
-        setContentView(R.layout.activity_login);
-        Button login;
-        Button teacher_panel;
+        setContentView(R.layout.activity_teacher_login);
         login=(Button)findViewById(R.id.loginButton);
-        teacher_panel=(Button)findViewById(R.id.teacherPanelButton);
+
         login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent it=new Intent(login.this, home_page.class);
-                startActivity(it);
-            }
-        });
-        teacher_panel.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent it=new Intent(login.this,teacher_login.class);
+                Intent it=new Intent(teacher_login.this,home_teacher.class);
                 startActivity(it);
             }
         });
