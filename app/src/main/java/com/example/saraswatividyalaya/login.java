@@ -18,7 +18,7 @@ public class login extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_login);
-        Button login; jipj
+        Button login; 
         Button teacher_panel;
         login=(Button)findViewById(R.id.loginButton);
         teacher_panel=(Button)findViewById(R.id.teacherPanelButton);
