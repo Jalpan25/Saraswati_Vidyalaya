@@ -4,31 +4,41 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 
-import androidx.activity.EdgeToEdge;
+
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
+import com.google.firebase.auth.FirebaseAuth;
+
 public class login extends AppCompatActivity {
+    EditText email,password;
+    Button buttonlogin;
+    FirebaseAuth mAuth;
+    Button teacher_panel;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        EdgeToEdge.enable(this);
         setContentView(R.layout.activity_login);
-        Button login; 
-        Button teacher_panel;
-        login=(Button)findViewById(R.id.loginButton);
-        teacher_panel=(Button)findViewById(R.id.teacherPanelButton);
-        login.setOnClickListener(new View.OnClickListener() {
+        email=findViewById(R.id.usernameEditText);
+        password=findViewById(R.id.passwordEditText);
+        mAuth= FirebaseAuth.getInstance();
+        buttonlogin=findViewById(R.id.loginButton);
+        teacher_panel=findViewById(R.id.teacherPanelButton);
+
+        buttonlogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent it=new Intent(login.this, home_page.class);
-                startActivity(it);
-            }
-        });
+                String email1,password1;
+                email1= String.valueOf(email.getText());
+                password1= String.valueOf(password.getText());
+                Intent intent=new Intent(getApplicationContext(), home_page.class);
+                startActivity(intent);
+                finish();
         teacher_panel.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

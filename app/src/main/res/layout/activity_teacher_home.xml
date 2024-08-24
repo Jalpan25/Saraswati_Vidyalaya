@@ -27,7 +27,7 @@
 
         <!--        Home -->
         <androidx.cardview.widget.CardView
-            android:id="@+id/c1"
+            android:id="@+id/c5"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:cardCornerRadius="15dp"
@@ -64,7 +64,7 @@
 
         <!--        Attendance -->
         <androidx.cardview.widget.CardView
-            android:id="@+id/c2"
+            android:id="@+id/c6"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:cardCornerRadius="15dp"
@@ -103,7 +103,7 @@
 
         <!--        Fees -->
         <androidx.cardview.widget.CardView
-            android:id="@+id/c3"
+            android:id="@+id/c7"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:cardCornerRadius="15dp"
@@ -141,7 +141,7 @@
 
         <!--  E-Library -->
         <androidx.cardview.widget.CardView
-            android:id="@+id/c4"
+            android:id="@+id/c8"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:cardCornerRadius="15dp"
