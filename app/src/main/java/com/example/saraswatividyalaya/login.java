@@ -26,7 +26,7 @@ public class login extends AppCompatActivity {
     Button buttonlogin;
     FirebaseAuth mAuth;
     Button teacher_panel;
-    op topi
+
 
     @Override
     public void onStart() {
@@ -40,6 +40,7 @@ public class login extends AppCompatActivity {
 
         }
     }
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
