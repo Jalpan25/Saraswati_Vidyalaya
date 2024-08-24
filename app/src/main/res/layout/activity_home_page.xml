@@ -14,170 +14,222 @@
         android:layout_height="200dp"
         android:background="@drawable/bg_view"
         />
+
     <GridLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:columnCount="2"
-        android:rowCount="3"
+        android:layout_below="@id/top_view"
         android:layout_marginLeft="24dp"
-        android:layout_marginRight="25dp"
         android:layout_marginTop="-80dp"
-        android:layout_below="@+id/top_view">
+        android:layout_marginRight="25dp"
+        android:columnCount="2"
+        android:rowCount="3">
 
-
-<!--        Home -->
+        <!-- Card 1: Personal -->
         <androidx.cardview.widget.CardView
             android:id="@+id/c1"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            app:cardCornerRadius="15dp"
-            android:layout_margin="12dp"
-            android:layout_columnWeight="1"
             android:layout_rowWeight="1"
-            android:layout_row="1"
-            android:layout_column="0"
-            app:cardElevation="12dp"
+            android:layout_columnWeight="1"
+            android:layout_margin="12dp"
+            app:cardCornerRadius="15dp"
+            app:cardElevation="12dp">
 
-            >
             <LinearLayout
-                android:layout_height="match_parent"
                 android:layout_width="match_parent"
-                android:orientation="vertical"
+                android:layout_height="match_parent"
                 android:gravity="center"
-                >
+                android:orientation="vertical">
+
                 <ImageView
                     android:layout_width="80dp"
                     android:layout_height="80dp"
-                    android:src="@drawable/graduation_student_icon"
                     android:layout_gravity="center_horizontal"
-                    />
+                    android:src="@drawable/graduation_student_icon" />
+
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Personal"
                     android:layout_gravity="center_horizontal"
+                    android:text="Personal"
+                    android:textColor="@color/black"
                     android:textSize="18sp"
-                    android:textStyle="bold"
-                    android:textColor="@color/black"/>
-                </LinearLayout>
+                    android:textStyle="bold" />
+            </LinearLayout>
         </androidx.cardview.widget.CardView>
 
-        <!--        Attendance -->
+        <!-- Card 2: Attendance -->
         <androidx.cardview.widget.CardView
             android:id="@+id/c2"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            app:cardCornerRadius="15dp"
-            android:layout_margin="12dp"
-            android:layout_columnWeight="1"
             android:layout_rowWeight="1"
-            android:layout_row="1"
-            android:layout_column="1"
-            app:cardElevation="12dp"
+            android:layout_columnWeight="1"
+            android:layout_margin="12dp"
+            app:cardCornerRadius="15dp"
+            app:cardElevation="12dp">
 
-            >
             <LinearLayout
-                android:layout_height="match_parent"
                 android:layout_width="match_parent"
-                android:orientation="vertical"
+                android:layout_height="match_parent"
                 android:gravity="center"
-                >
+                android:orientation="vertical">
+
                 <ImageView
                     android:layout_width="80dp"
                     android:layout_height="80dp"
-                    android:src="@drawable/attendance_icon"
                     android:layout_gravity="center_horizontal"
-                    />
+                    android:src="@drawable/attendance_icon" />
+
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Attendance"
                     android:layout_gravity="center_horizontal"
+                    android:text="Attendance"
+                    android:textColor="@color/black"
                     android:textSize="18sp"
-                    android:textStyle="bold"
-                    android:textColor="@color/black"/>
-
+                    android:textStyle="bold" />
             </LinearLayout>
-
         </androidx.cardview.widget.CardView>
 
-        <!--        Fees -->
+        <!-- Card 3: Fees -->
         <androidx.cardview.widget.CardView
             android:id="@+id/c3"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            app:cardCornerRadius="15dp"
-            android:layout_margin="12dp"
-            android:layout_columnWeight="1"
             android:layout_rowWeight="1"
-            android:layout_row="2"
-            android:layout_column="0"
-            app:cardElevation="12dp"
+            android:layout_columnWeight="1"
+            android:layout_margin="12dp"
+            app:cardCornerRadius="15dp"
+            app:cardElevation="12dp">
 
-            >
             <LinearLayout
-                android:layout_height="match_parent"
                 android:layout_width="match_parent"
-                android:orientation="vertical"
+                android:layout_height="match_parent"
                 android:gravity="center"
-                >
+                android:orientation="vertical">
+
                 <ImageView
                     android:layout_width="80dp"
                     android:layout_height="80dp"
-                    android:src="@drawable/fees_paid_icon"
                     android:layout_gravity="center_horizontal"
-                    />
+                    android:src="@drawable/fees_paid_icon" />
+
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Fees"
                     android:layout_gravity="center_horizontal"
+                    android:text="Fees"
+                    android:textColor="@color/black"
                     android:textSize="18sp"
-                    android:textStyle="bold"
-                    android:textColor="@color/black"/>
+                    android:textStyle="bold" />
             </LinearLayout>
-
         </androidx.cardview.widget.CardView>
 
-        <!--  E-Library -->
+        <!-- Card 4: E-Library -->
         <androidx.cardview.widget.CardView
             android:id="@+id/c4"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            app:cardCornerRadius="15dp"
-            android:layout_margin="12dp"
-            android:layout_columnWeight="1"
             android:layout_rowWeight="1"
-            android:layout_row="2"
-            android:layout_column="1"
-            app:cardElevation="12dp"
+            android:layout_columnWeight="1"
+            android:layout_margin="12dp"
+            app:cardCornerRadius="15dp"
+            app:cardElevation="12dp">
 
-            >
             <LinearLayout
-                android:layout_height="match_parent"
                 android:layout_width="match_parent"
-                android:orientation="vertical"
+                android:layout_height="match_parent"
                 android:gravity="center"
-                >
+                android:orientation="vertical">
+
                 <ImageView
                     android:layout_width="80dp"
                     android:layout_height="80dp"
-                    android:src="@drawable/ebook_icon"
                     android:layout_gravity="center_horizontal"
-                    />
+                    android:src="@drawable/ebook_icon" />
+
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="E-Library"
                     android:layout_gravity="center_horizontal"
+                    android:text="E-Library"
+                    android:textColor="@color/black"
                     android:textSize="18sp"
-                    android:textStyle="bold"
-                    android:textColor="@color/black"/>
+                    android:textStyle="bold" />
             </LinearLayout>
-
         </androidx.cardview.widget.CardView>
 
+        <!-- Card 5: Personal (duplicated, update as needed) -->
+        <androidx.cardview.widget.CardView
+            android:id="@+id/c5"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_margin="12dp"
+            app:cardCornerRadius="15dp"
+            app:cardElevation="12dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:layout_gravity="center_horizontal"
+                    android:src="@drawable/result_icon" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:text="Result"
+                    android:textColor="@color/black"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- Card 6: Logout (duplicated, update as needed) -->
+        <androidx.cardview.widget.CardView
+            android:id="@+id/c6"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_margin="12dp"
+            app:cardCornerRadius="15dp"
+            app:cardElevation="12dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:layout_gravity="center_horizontal"
+                    android:src="@drawable/logout" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:text="Logout"
+                    android:textColor="@color/black"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
     </GridLayout>
+
 
     <TextView
         android:id="@+id/textView"
