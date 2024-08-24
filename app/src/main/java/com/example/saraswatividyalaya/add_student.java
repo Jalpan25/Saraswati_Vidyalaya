@@ -20,11 +20,27 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.Firebase;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 public class add_student extends AppCompatActivity {
     EditText email,password;
     Button buttonReg;
     FirebaseAuth mAuth;
+
+
+    @Override
+    public void onStart() {
+        super.onStart();
+        // Check if user is signed in (non-null) and update UI accordingly.
+        FirebaseUser currentUser = mAuth.getCurrentUser();
+        if(currentUser != null){
+            Intent intent=new Intent(getApplicationContext(), home_page.class);
+            startActivity(intent);
+            finish();
+
+        }
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -40,9 +56,7 @@ public class add_student extends AppCompatActivity {
                 String email1,password1;
                 email1= String.valueOf(email.getText());
                 password1= String.valueOf(password.getText());
-                Intent intent=new Intent(getApplicationContext(), home_page.class);
-                startActivity(intent);
-                finish();
+
 
                 if(TextUtils.isEmpty(email1))
                 {
@@ -63,6 +77,9 @@ public class add_student extends AppCompatActivity {
 
                                     Toast.makeText(add_student.this, "Account Created.",
                                             Toast.LENGTH_SHORT).show();
+                                    Intent intent=new Intent(getApplicationContext(), home_page.class);
+                                    startActivity(intent);
+                                    finish();
 
 
                                 } else {
