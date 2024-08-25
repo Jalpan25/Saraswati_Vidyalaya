@@ -1,101 +1,271 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#008080"> <!-- Background color -->
 
-    <!-- School Logo ImageView -->
-    <ImageView
-        android:id="@+id/schoolLogoImageView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="40dp"
-        android:src="@drawable/demo1" /> <!-- Replace with your logo -->
-
-    <!-- School Name TextView -->
-    <TextView
-        android:id="@+id/schoolNameTextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/schoolLogoImageView"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="8dp"
-        android:text="Saraswati Shiksha Niketan"
-        android:textColor="@color/white"
-        android:textSize="24sp"
-        android:textStyle="bold" />
-
-    <!-- Admission and Contact TextViews (aligned right) -->
-
-    <!-- Student Login Section -->
     <RelativeLayout
-        android:layout_width="387dp"
-        android:layout_height="306dp"
-        android:layout_below="@id/schoolNameTextView"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="40dp"
-        android:layout_marginEnd="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
         android:background="@drawable/rounded_corner_background"> <!-- Rounded corner background -->
 
+        <!-- Title TextView -->
         <TextView
             android:id="@+id/studentLoginTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="20dp"
-            android:text="Student SignUp"
+            android:text="Add Student"
             android:textColor="#4A4A4A"
             android:textSize="18sp"
             android:textStyle="bold" />
+
+        <!-- Full Name TextView -->
+        <TextView
+            android:id="@+id/fullNameTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/studentLoginTextView"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp"
+            android:text="Full Name"
+            android:textColor="#4A4A4A"
+            android:textSize="16sp" />
 
         <!-- Username EditText -->
         <EditText
             android:id="@+id/usernameEditText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/studentLoginTextView"
+            android:layout_below="@id/fullNameTextView"
             android:layout_marginStart="20dp"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="10dp"
             android:layout_marginEnd="20dp"
-
             android:drawableLeft="@drawable/ic_user"
-            android:hint="User Name"
+            android:hint="Enter Full Name"
             android:minHeight="48dp"
             android:padding="16dp"
             android:textColor="#4A4A4A" />
+
+        <!-- Email TextView -->
+        <TextView
+            android:id="@+id/emailLabelTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/usernameEditText"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp"
+            android:text="Email"
+            android:textColor="#4A4A4A"
+            android:textSize="16sp" />
+
+        <!-- Email EditText -->
+        <EditText
+            android:id="@+id/emailEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/emailLabelTextView"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="20dp"
+            android:drawableLeft="@drawable/baseline_email_24"
+            android:hint="Enter Email"
+            android:minHeight="48dp"
+            android:padding="16dp"
+            android:textColor="#4A4A4A" />
+
+        <!-- Password TextView -->
+        <TextView
+            android:id="@+id/passwordLabelTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/emailEditText"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp"
+            android:text="Password"
+            android:textColor="#4A4A4A"
+            android:textSize="16sp" />
 
         <!-- Password EditText -->
         <EditText
             android:id="@+id/passwordEditText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/usernameEditText"
+            android:layout_below="@id/passwordLabelTextView"
             android:layout_marginStart="20dp"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="10dp"
             android:layout_marginEnd="20dp"
             android:drawableLeft="@drawable/baseline_password_24"
-            android:hint="Password"
+            android:hint="Enter Password "
             android:inputType="textPassword"
             android:minHeight="48dp"
             android:padding="16dp"
             android:textColor="#4A4A4A" />
 
-        <!-- ConfirmPassword EditText -->
-
-        <!-- Singup Button -->
-        <Button
-            android:id="@+id/loginButton"
-            android:layout_width="match_parent"
+        <!-- DOB TextView -->
+        <TextView
+            android:id="@+id/dobLabelTextView"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/passwordEditText"
             android:layout_marginStart="20dp"
             android:layout_marginTop="20dp"
+            android:text="Date of Birth"
+            android:textColor="#4A4A4A"
+            android:textSize="16sp" />
+
+        <!-- DOB EditText -->
+        <EditText
+            android:id="@+id/editTextDate2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/dobLabelTextView"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="10dp"
             android:layout_marginEnd="20dp"
+
+            android:hint="MM/DD/YYYY"
+            android:inputType="date"
+            android:minHeight="48dp"
+            android:padding="16dp"
+            android:textColor="#4A4A4A" />
+
+        <!-- Gender TextView -->
+        <TextView
+            android:id="@+id/genderLabelTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/editTextDate2"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp"
+            android:text="Gender"
+            android:textColor="#4A4A4A"
+            android:textSize="16sp" />
+
+        <!-- Gender RadioGroup -->
+        <RadioGroup
+            android:id="@+id/genderRadioGroup"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/genderLabelTextView"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="20dp"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/maleRadioButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Male"
+                android:textColor="#4A4A4A" />
+
+            <RadioButton
+                android:id="@+id/femaleRadioButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Female"
+                android:textColor="#4A4A4A" />
+
+            <RadioButton
+                android:id="@+id/otherRadioButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Other"
+                android:textColor="#4A4A4A" />
+        </RadioGroup>
+
+        <!-- Roll Number TextView -->
+        <TextView
+            android:id="@+id/rollNumberTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/genderRadioGroup"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp"
+            android:text="Roll Number"
+            android:textColor="#4A4A4A"
+            android:textSize="16sp" />
+
+        <!-- Roll Number EditText -->
+        <EditText
+            android:id="@+id/rollNumberEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/rollNumberTextView"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="20dp"
+            android:hint="Enter Roll Number"
+            android:minHeight="48dp"
+            android:padding="16dp"
+            android:textColor="#4A4A4A" />
+
+        <!-- Medium TextView -->
+        <TextView
+            android:id="@+id/mediumTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/rollNumberEditText"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp"
+            android:text="Medium"
+            android:textColor="#4A4A4A"
+            android:textSize="16sp" />
+
+        <!-- Medium EditText -->
+        <EditText
+            android:id="@+id/mediumEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/mediumTextView"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="20dp"
+            android:hint="Enter Medium"
+            android:minHeight="48dp"
+            android:padding="16dp"
+            android:textColor="#4A4A4A" />
+
+        <!-- Standard TextView -->
+        <TextView
+            android:id="@+id/standardTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/mediumEditText"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp"
+            android:text="Standard"
+            android:textColor="#4A4A4A"
+            android:textSize="16sp" />
+
+        <!-- Standard EditText -->
+        <EditText
+            android:id="@+id/standardEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/standardTextView"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="20dp"
+            android:hint="Enter Standard"
+            android:minHeight="48dp"
+            android:padding="16dp"
+            android:textColor="#4A4A4A" />
+
+        <!-- Signup Button -->
+        <Button
+            android:id="@+id/loginButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/standardEditText"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginBottom="20dp"
             android:backgroundTint="#008080"
             android:text="Create Account"
             android:textColor="#4A4A4A" />
-
-
     </RelativeLayout>
-
-</RelativeLayout>
+</ScrollView>

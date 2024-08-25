@@ -28,24 +28,24 @@ public class add_student extends AppCompatActivity {
     FirebaseAuth mAuth;
 
 
-    @Override
-    public void onStart() {
-        super.onStart();
-        // Check if user is signed in (non-null) and update UI accordingly.
-        FirebaseUser currentUser = mAuth.getCurrentUser();
-        if(currentUser != null){
-            Intent intent=new Intent(getApplicationContext(), home_page.class);
-            startActivity(intent);
-            finish();
-
-        }
-    }
+//    @Override
+//    public void onStart() {
+//        super.onStart();
+//        // Check if user is signed in (non-null) and update UI accordingly.
+//        FirebaseUser currentUser = mAuth.getCurrentUser();
+//        if(currentUser != null){
+//            Intent intent=new Intent(getApplicationContext(), teacher_home.class);
+//            startActivity(intent);
+//            finish();
+//
+//        }
+//    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_student);
-        email=findViewById(R.id.usernameEditText);
+        email=findViewById(R.id.emailEditText);
         password=findViewById(R.id.passwordEditText);
         mAuth= FirebaseAuth.getInstance();
         buttonReg=findViewById(R.id.loginButton);
@@ -69,6 +69,11 @@ public class add_student extends AppCompatActivity {
                     Toast.makeText(add_student.this,"Enter password",Toast.LENGTH_SHORT).show();
                     return;
                 }
+                if(password1.length()<6)
+                {
+                    Toast.makeText(add_student.this," Password should be at least 6 characters long",Toast.LENGTH_SHORT).show();
+                    return;
+                }
                 mAuth.createUserWithEmailAndPassword(email1, password1)
                         .addOnCompleteListener( new OnCompleteListener<AuthResult>() {
                             @Override
@@ -77,7 +82,7 @@ public class add_student extends AppCompatActivity {
 
                                     Toast.makeText(add_student.this, "Account Created.",
                                             Toast.LENGTH_SHORT).show();
-                                    Intent intent=new Intent(getApplicationContext(), home_page.class);
+                                    Intent intent=new Intent(getApplicationContext(), teacher_home.class);
                                     startActivity(intent);
                                     finish();
 

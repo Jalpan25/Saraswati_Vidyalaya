@@ -7,8 +7,10 @@ import android.view.View;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
 
+import com.google.firebase.auth.FirebaseAuth;
+
 public class teacher_home extends AppCompatActivity implements View.OnClickListener {
-    public CardView personal, attendance, fees, elibrary;
+    public CardView personal, attendance, upload_result, elibrary,add_student,logout;
 
     @SuppressLint("MissingInflatedId")
     @Override
@@ -16,15 +18,19 @@ public class teacher_home extends AppCompatActivity implements View.OnClickListe
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_teacher_home);
 
-        personal = findViewById(R.id.c5);
-        attendance = findViewById(R.id.c6);
-        fees = findViewById(R.id.c7);
-        elibrary = findViewById(R.id.c8);
+        personal = findViewById(R.id.c1);
+        attendance = findViewById(R.id.c2);
+        upload_result = findViewById(R.id.c3);
+        elibrary = findViewById(R.id.c4);
+        add_student=findViewById(R.id.c5);
+        logout=findViewById(R.id.c6);
 
         personal.setOnClickListener(this);
         attendance.setOnClickListener(this);
-        fees.setOnClickListener(this);
+        upload_result.setOnClickListener(this);
         elibrary.setOnClickListener(this);
+        add_student.setOnClickListener(this);
+        logout.setOnClickListener(this);
     }
 
     @Override
@@ -32,8 +38,15 @@ public class teacher_home extends AppCompatActivity implements View.OnClickListe
         Intent i;
 
         if (v1.getId() == R.id.c5) {
-            i = new Intent(this, add_student.class);
+            i = new Intent(teacher_home.this, add_student.class);
             startActivity(i);
+            finish();
+        }
+        if (v1.getId() == R.id.c6) {
+            FirebaseAuth.getInstance().signOut();
+            i = new Intent(teacher_home.this, login.class);
+            startActivity(i);
+            finish();
         }
 
         // Handle other clicks here
