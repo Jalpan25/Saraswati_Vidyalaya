@@ -8,7 +8,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
 
 public class teacher_home extends AppCompatActivity implements View.OnClickListener {
-    public CardView personal, attendance, fees, elibrary;
+    public CardView personal, attendance, upload_result, elibrary,add_student,logout;
 
     @SuppressLint("MissingInflatedId")
     @Override
@@ -16,15 +16,19 @@ public class teacher_home extends AppCompatActivity implements View.OnClickListe
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_teacher_home);
 
-        personal = findViewById(R.id.c5);
-        attendance = findViewById(R.id.c6);
-        fees = findViewById(R.id.c7);
-        elibrary = findViewById(R.id.c8);
+        personal = findViewById(R.id.c1);
+        attendance = findViewById(R.id.c2);
+        upload_result = findViewById(R.id.c3);
+        elibrary = findViewById(R.id.c4);
+        add_student=findViewById(R.id.c5);
+        logout=findViewById(R.id.c6);
 
         personal.setOnClickListener(this);
         attendance.setOnClickListener(this);
-        fees.setOnClickListener(this);
+        upload_result.setOnClickListener(this);
         elibrary.setOnClickListener(this);
+        add_student.setOnClickListener(this);
+        logout.setOnClickListener(this);
     }
 
     @Override
