@@ -7,6 +7,8 @@ import android.view.View;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
 
+import com.google.firebase.auth.FirebaseAuth;
+
 public class teacher_home extends AppCompatActivity implements View.OnClickListener {
     public CardView personal, attendance, upload_result, elibrary,add_student,logout;
 
@@ -36,8 +38,15 @@ public class teacher_home extends AppCompatActivity implements View.OnClickListe
         Intent i;
 
         if (v1.getId() == R.id.c5) {
-            i = new Intent(this, add_student.class);
+            i = new Intent(teacher_home.this, add_student.class);
             startActivity(i);
+            finish();
+        }
+        if (v1.getId() == R.id.c6) {
+            FirebaseAuth.getInstance().signOut();
+            i = new Intent(teacher_home.this, login.class);
+            startActivity(i);
+            finish();
         }
 
         // Handle other clicks here
