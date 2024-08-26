@@ -23,6 +23,15 @@ public class teacher_login extends AppCompatActivity {
         password = findViewById(R.id.passwordEditText);
         buttonReg = findViewById(R.id.loginButton);
 
+//        buttonReg.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                Intent i=new Intent(teacher_login.this, teacher_home.class);
+//                startActivity(i);
+//                finish();
+//            }
+//        });
+
         buttonReg.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
