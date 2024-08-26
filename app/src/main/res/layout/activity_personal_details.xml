@@ -93,7 +93,7 @@
                 android:layout_margin="10dp"
                 android:layout_weight="1"
                 android:gravity="center_horizontal"
-                android:text="Jalpan H Patel"
+                android:text=""
                 android:textSize="18sp" />
 
         </LinearLayout>
@@ -132,7 +132,7 @@
                 android:layout_margin="10dp"
                 android:layout_weight="1"
                 android:gravity="center_horizontal"
-                android:text="jalpanvvm@gmail.com"
+                android:text=" "
                 android:textSize="18sp" />
 
 
@@ -161,7 +161,7 @@
                 android:layout_margin="10dp"
                 android:layout_weight="1"
                 android:gravity="start"
-                android:text="GRNO"
+                android:text="Rollno"
                 android:textColor="#008080"
                 android:textSize="18sp"
                 android:textStyle="bold" />
@@ -173,7 +173,7 @@
                 android:layout_margin="10dp"
                 android:layout_weight="1"
                 android:gravity="center_horizontal"
-                android:text="15847"
+                android:text=" "
                 android:textSize="18sp" />
 
 
@@ -214,7 +214,7 @@
                 android:layout_margin="10dp"
                 android:layout_weight="1"
                 android:gravity="center_horizontal"
-                android:text="Gujrati"
+                android:text=" "
                 android:textSize="18sp" />
 
 
@@ -243,7 +243,7 @@
                 android:layout_margin="10dp"
                 android:layout_weight="1"
                 android:gravity="start"
-                android:text="Std/Div"
+                android:text="Standard"
                 android:textColor="#008080"
                 android:textSize="18sp"
                 android:textStyle="bold" />
@@ -255,7 +255,7 @@
                 android:layout_margin="10dp"
                 android:layout_weight="1"
                 android:gravity="center_horizontal"
-                android:text="11/A"
+                android:text=" "
                 android:textSize="18sp" />
 
 
