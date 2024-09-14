@@ -54,6 +54,11 @@ public class home_page extends AppCompatActivity implements View.OnClickListener
             startActivity(i);
             finish();
         }
+        else if (v.getId() == R.id.c4) {
+            i = new Intent(home_page.this, StudentLibraryActivity.class);
+            startActivity(i);
+            finish();
+        }
 
     }
 }

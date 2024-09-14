@@ -1,138 +1,138 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="#008080"> <!-- Background color -->
+    android:layout_height="match_parent">
 
-    <!-- School Logo ImageView -->
-    <ImageView
-        android:id="@+id/schoolLogoImageView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="40dp"
-        android:src="@drawable/demo1" /> <!-- Replace with your logo -->
-
-    <!-- School Name TextView -->
-    <TextView
-        android:id="@+id/schoolNameTextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/schoolLogoImageView"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="8dp"
-        android:text="Saraswati Shiksha Niketan"
-        android:textColor="@color/white"
-        android:textSize="24sp"
-        android:textStyle="bold" />
-
-    <!-- Admission and Contact TextViews (aligned right) -->
-
-    <!-- Student Login Section -->
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/schoolNameTextView"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="40dp"
-        android:layout_marginEnd="20dp"
-        android:background="@drawable/rounded_corner_background"> <!-- Rounded corner background -->
+        android:background="#008080"> <!-- Background color -->
 
-        <TextView
-            android:id="@+id/studentLoginTextView"
+        <!-- School Logo ImageView -->
+        <ImageView
+            android:id="@+id/schoolLogoImageView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="20dp"
-            android:text="Student Login"
-            android:textColor="#4A4A4A"
-            android:textSize="18sp"
+            android:layout_marginTop="40dp"
+            android:src="@drawable/demo1" /> <!-- Replace with your logo -->
+
+        <!-- School Name TextView -->
+        <TextView
+            android:id="@+id/schoolNameTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/schoolLogoImageView"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="8dp"
+            android:text="Saraswati Shiksha Niketan"
+            android:textColor="@color/white"
+            android:textSize="24sp"
             android:textStyle="bold" />
 
-        <!-- Username EditText -->
-        <EditText
-            android:id="@+id/usernameEditText"
+        <!-- Student Login Section -->
+        <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/studentLoginTextView"
+            android:layout_below="@id/schoolNameTextView"
             android:layout_marginStart="20dp"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="40dp"
             android:layout_marginEnd="20dp"
+            android:background="@drawable/rounded_corner_background"> <!-- Rounded corner background -->
 
-            android:drawableLeft="@drawable/ic_user"
-            android:hint="Enter Email"
-            android:padding="16dp"
-            android:minHeight="48dp"
-            android:textColor="#4A4A4A" />
+            <TextView
+                android:id="@+id/studentLoginTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="20dp"
+                android:text="Student Login"
+                android:textColor="#4A4A4A"
+                android:textSize="18sp"
+                android:textStyle="bold" />
 
-        <!-- Password EditText -->
-        <EditText
-            android:id="@+id/passwordEditText"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/usernameEditText"
-            android:layout_marginStart="20dp"
-            android:layout_marginTop="20dp"
-            android:layout_marginEnd="20dp"
-            android:drawableLeft="@drawable/baseline_password_24"
-            android:hint=" Password"
-            android:inputType="textPassword"
-            android:padding="16dp"
-            android:minHeight="48dp"
-            android:textColor="#FFFFFF"/>
+            <!-- Username EditText -->
+            <EditText
+                android:id="@+id/usernameEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/studentLoginTextView"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="20dp"
+                android:drawableLeft="@drawable/ic_user"
+                android:hint="Enter Email"
+                android:padding="16dp"
+                android:minHeight="48dp"
+                android:textColor="#4A4A4A" />
 
-        <!-- Login Button -->
-        <Button
-            android:id="@+id/loginButton"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/passwordEditText"
-            android:layout_marginStart="20dp"
-            android:layout_marginTop="20dp"
-            android:layout_marginEnd="20dp"
-            android:backgroundTint="#008080"
-            android:text="LOGIN"
-            android:textColor="#4A4A4A" />
+            <!-- Password EditText -->
+            <EditText
+                android:id="@+id/passwordEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/usernameEditText"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="20dp"
+                android:drawableLeft="@drawable/baseline_password_24"
+                android:hint="Password"
+                android:inputType="textPassword"
+                android:padding="16dp"
+                android:minHeight="48dp"
+                android:textColor="#FFFFFF" />
 
-        <!-- Or TextView -->
-        <TextView
-            android:id="@+id/orTextView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/loginButton"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="20dp"
-            android:text="OR"
-            android:textColor="#4A4A4A"
-            android:textSize="16sp" />
+            <!-- Login Button -->
+            <Button
+                android:id="@+id/loginButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/passwordEditText"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="20dp"
+                android:backgroundTint="#008080"
+                android:text="LOGIN"
+                android:textColor="#4A4A4A" />
 
-        <!-- Teacher Panel Button -->
-        <Button
-            android:id="@+id/teacherPanelButton"
-            android:layout_width="match_parent"
-            android:layout_height="48dp"
-        android:layout_below="@id/orTextView"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="20dp"
-        android:backgroundTint="#008080"
+            <!-- Or TextView -->
+            <TextView
+                android:id="@+id/orTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/loginButton"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="20dp"
+                android:text="OR"
+                android:textColor="#4A4A4A"
+                android:textSize="16sp" />
 
-            android:minHeight="48dp"
-        android:text="TEACHER PANEL"
-        android:textColor="#4A4A4A" />
+            <!-- Teacher Panel Button -->
+            <Button
+                android:id="@+id/teacherPanelButton"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_below="@id/orTextView"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="20dp"
+                android:backgroundTint="#008080"
+                android:minHeight="48dp"
+                android:text="TEACHER PANEL"
+                android:textColor="#4A4A4A" />
 
+            <!-- Privacy Policy TextView -->
+            <TextView
+                android:id="@+id/privacyPolicyTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/teacherPanelButton"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="10dp"
+                android:text="By clicking LOGIN, you agree with our Privacy Policy"
+                android:textColor="#4A4A4A"
+                android:textSize="12sp" />
 
-        <!-- Privacy Policy TextView -->
-        <TextView
-            android:id="@+id/privacyPolicyTextView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/teacherPanelButton"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="10dp"
-            android:text="By clicking LOGIN, you agree with our Privacy Policy"
-            android:textColor="#4A4A4A"
-            android:textSize="12sp" />
+        </RelativeLayout>
 
     </RelativeLayout>
-
-</RelativeLayout>
+</ScrollView>
