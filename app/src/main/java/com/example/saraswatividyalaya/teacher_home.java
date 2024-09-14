@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 import androidx.cardview.widget.CardView;
 
 import com.google.firebase.auth.FirebaseAuth;
@@ -17,6 +18,11 @@ public class teacher_home extends AppCompatActivity implements View.OnClickListe
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_teacher_home);
+        Toolbar toolbar = findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true); // Enable the navigation icon
+        getSupportActionBar().setHomeAsUpIndicator(R.drawable.navigation_icon); // Set your custom icon
+
 
         personal = findViewById(R.id.c1);
         attendance = findViewById(R.id.c2);
@@ -39,6 +45,12 @@ public class teacher_home extends AppCompatActivity implements View.OnClickListe
 
         if (v1.getId() == R.id.c5) {
             i = new Intent(teacher_home.this, add_student.class);
+            startActivity(i);
+            finish();
+        }
+
+        else if (v1.getId() == R.id.c4) {
+            i = new Intent(teacher_home.this, TeacherLibraryActivity.class);
             startActivity(i);
             finish();
         }

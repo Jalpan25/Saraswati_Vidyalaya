@@ -1,4 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -8,12 +7,47 @@
     android:background="#FFF2D7"
     tools:context=".teacher_home">
 
+    <!-- Toolbar with Navigation Icon and App Name -->
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="?attr/colorPrimary"
+        android:elevation="4dp"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        app:contentInsetStartWithNavigation="0dp">
+
+        <!-- Navigation Icon -->
+        <ImageButton
+            android:id="@+id/navigation_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/navigation_icon"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:contentDescription="Navigation Icon"
+        android:padding="8dp"
+        android:layout_gravity="start"/>
+
+        <!-- App Name next to Navigation Icon -->
+        <TextView
+            android:id="@+id/toolbar_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginStart="16dp"
+            android:text="App bar"
+        android:textColor="#FFFFFF"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
+    </androidx.appcompat.widget.Toolbar>
+
     <View
         android:id="@+id/top_view"
         android:layout_width="match_parent"
         android:layout_height="200dp"
-        android:background="@drawable/bgt_view"
-        />
+        android:background="@drawable/bgt_view" />
 
     <GridLayout
         android:layout_width="match_parent"
@@ -161,7 +195,7 @@
             </LinearLayout>
         </androidx.cardview.widget.CardView>
 
-        <!-- Card 5: Personal (duplicated, update as needed) -->
+        <!-- Card 5: Add Student -->
         <androidx.cardview.widget.CardView
             android:id="@+id/c5"
             android:layout_width="0dp"
@@ -195,7 +229,7 @@
             </LinearLayout>
         </androidx.cardview.widget.CardView>
 
-        <!-- Card 6: Logout (duplicated, update as needed) -->
+        <!-- Card 6: Logout -->
         <androidx.cardview.widget.CardView
             android:id="@+id/c6"
             android:layout_width="0dp"
@@ -228,18 +262,7 @@
                     android:textStyle="bold" />
             </LinearLayout>
         </androidx.cardview.widget.CardView>
+
     </GridLayout>
-
-
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="DashBoard"
-        android:textColor="#4A4A4A"
-        android:textStyle="bold"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="30dp"
-        android:textSize="36sp"/>
 
 </RelativeLayout>
