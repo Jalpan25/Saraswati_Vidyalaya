@@ -1,0 +1,19 @@
+<resources>
+
+    <!-- Base application theme -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here -->
+        <item name="colorPrimary">#008080</item> <!-- Example color for primary -->
+        <item name="colorPrimaryDark">#005050</item>
+        <item name="colorAccent">#F98866</item>
+
+        <!-- Change the color of the three dots (overflow menu icon) -->
+        <item name="actionOverflowButtonStyle">@style/OverflowButton</item>
+    </style>
+
+    <!-- Style for the Overflow Menu Button -->
+    <style name="OverflowButton" parent="Widget.AppCompat.ActionButton.Overflow">
+        <item name="android:tint">#008080</item> <!-- Set the color for the three dots here -->
+    </style>
+
+</resources>

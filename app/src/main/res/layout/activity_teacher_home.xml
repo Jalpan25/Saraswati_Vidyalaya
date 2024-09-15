@@ -4,43 +4,23 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#FFF2D7"
+    android:background="#FFD9C2"
     tools:context=".teacher_home">
+
 
     <!-- Toolbar with Navigation Icon and App Name -->
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
-        android:background="?attr/colorPrimary"
+        android:background="#FFFFFF"
         android:elevation="4dp"
+        app:menu="@menu/toolbar_menu"
+        app:titleTextColor="#008080"
         app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
         android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
-        app:contentInsetStartWithNavigation="0dp">
-
-        <!-- Navigation Icon -->
-        <ImageButton
-            android:id="@+id/navigation_icon"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/navigation_icon"
-        android:background="?attr/selectableItemBackgroundBorderless"
-        android:contentDescription="Navigation Icon"
-        android:padding="8dp"
-        android:layout_gravity="start"/>
-
-        <!-- App Name next to Navigation Icon -->
-        <TextView
-            android:id="@+id/toolbar_title"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_vertical"
-            android:layout_marginStart="16dp"
-            android:text="App bar"
-        android:textColor="#FFFFFF"
-        android:textSize="20sp"
-        android:textStyle="bold" />
-
+        app:contentInsetStartWithNavigation="0dp"
+        app:theme="@style/AppTheme">
     </androidx.appcompat.widget.Toolbar>
 
     <View

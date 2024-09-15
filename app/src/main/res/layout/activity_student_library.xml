@@ -3,10 +3,17 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:padding="16dp">
+    android:padding="16dp"
+    android:background="#FFF4E1">
 
     <ListView
         android:id="@+id/list_view_pdfs"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:choiceMode="multipleChoice"
+    android:divider="@android:color/darker_gray"
+    android:dividerHeight="1dp"
+    android:padding="8dp"
+    />
+
 </LinearLayout>
