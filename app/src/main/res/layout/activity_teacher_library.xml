@@ -4,40 +4,22 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:padding="16dp"
-    android:background="#FFF4E1"> <!-- Light background color -->
+    android:background="#FFF4E1">
 
-    <LinearLayout
-        android:layout_width="match_parent"
+    <Button
+        android:id="@+id/button_upload_pdf"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:gravity="center"
-        android:layout_marginBottom="16dp">
-
-        <Button
-            android:id="@+id/button_upload_pdf"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="Upload PDF"
-            android:backgroundTint="#FF896B"
+        android:text="Upload PDF"
+        android:layout_gravity="center"
+        android:backgroundTint="#FF896B"
         android:textColor="#FFFFFF" />
-
-        <Button
-            android:id="@+id/button_delete_pdf"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="Delete PDF"
-            android:layout_marginStart="8dp"
-            android:backgroundTint="#FF896B"
-            android:textColor="#FFFFFF" />
-    </LinearLayout>
 
     <ListView
         android:id="@+id/list_view_uploaded_pdfs"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:choiceMode="multipleChoice"
+
         android:divider="@android:color/darker_gray"
         android:dividerHeight="1dp" />
 

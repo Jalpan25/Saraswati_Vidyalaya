@@ -13,9 +13,6 @@
         android:theme="@style/Theme.SaraswatiVidyalaya"
         tools:targetApi="31">
         <activity
-            android:name=".home_teacher"
-            android:exported="false" />
-        <activity
             android:name=".teacher_login"
             android:exported="false" />
         <activity
@@ -31,6 +28,12 @@
             android:name=".add_student"
             android:exported="false" />
         <activity
+            android:name=".TeacherLibraryActivity"
+            android:exported="false" />
+        <activity
+            android:name=".StudentLibraryActivity"
+            android:exported="false" />
+        <activity
             android:name=".login"
             android:exported="false" /> <!-- SplashActivity as the launcher activity -->
         <activity
@@ -41,7 +44,7 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity> <!-- MainActivity without the launcher intent-filter -->
+        </activity>
         <activity
             android:name=".MainActivity"
             android:exported="true" />
