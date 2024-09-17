@@ -1,0 +1,27 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <CalendarView
+        android:id="@+id/calendarView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <!-- Use ImageView as overlay for marking attendance -->
+    <ImageView
+        android:id="@+id/attendanceMarker"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_gravity="center"
+        android:visibility="gone"
+        android:src="@drawable/green_circle" />
+
+    <Button
+        android:id="@+id/loadAttendanceButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Load Attendance"
+        android:layout_gravity="bottom|center_horizontal"
+        android:layout_marginBottom="16dp" />
+
+</FrameLayout>

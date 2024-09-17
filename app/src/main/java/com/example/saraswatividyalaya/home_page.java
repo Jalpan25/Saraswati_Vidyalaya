@@ -3,6 +3,7 @@ package com.example.saraswatividyalaya;
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 
 
@@ -42,9 +43,19 @@ public class home_page extends AppCompatActivity implements View.OnClickListener
     @Override
     public void onClick(View v) {
         Intent i;
+        String rollNo = getIntent().getStringExtra("rollNo");
 
+        Log.d("HomePageDebug", "Received roll number: " + rollNo);
         if (v.getId() == R.id.c1) {
             i = new Intent(home_page.this, personal_details.class);
+            startActivity(i);
+            finish();
+        }
+        else if (v.getId() == R.id.c2) {
+
+            i = new Intent(home_page.this, student_attendance.class);
+            i.putExtra("rollNo", rollNo);
+            Log.d("HomePageDebug", "Received roll number: " + rollNo);
             startActivity(i);
             finish();
         }

@@ -3,6 +3,7 @@
     android:layout_height="match_parent"
     android:background="#F98866"> <!-- Background color -->
 
+
     <!-- School Logo ImageView -->
     <ImageView
         android:id="@+id/schoolLogoImageView"

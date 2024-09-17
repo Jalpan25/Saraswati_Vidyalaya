@@ -11,8 +11,8 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.cardview.widget.CardView;
-
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 public class teacher_home extends AppCompatActivity implements View.OnClickListener {
     public CardView personal, attendance, upload_result, elibrary,add_student,logout;
@@ -22,6 +22,9 @@ public class teacher_home extends AppCompatActivity implements View.OnClickListe
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_teacher_home);
+
+
+
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
@@ -51,13 +54,18 @@ public class teacher_home extends AppCompatActivity implements View.OnClickListe
             startActivity(i);
             finish();
         }
+       else  if (v1.getId() == R.id.c2) {
+            i = new Intent(teacher_home.this, Attendance_teacher.class);
+            startActivity(i);
+            finish();
+        }
 
         else if (v1.getId() == R.id.c4) {
             i = new Intent(teacher_home.this, TeacherLibraryActivity.class);
             startActivity(i);
             finish();
         }
-        if (v1.getId() == R.id.c6) {
+       else  if (v1.getId() == R.id.c6) {
             FirebaseAuth.getInstance().signOut();
             i = new Intent(teacher_home.this, login.class);
             startActivity(i);
