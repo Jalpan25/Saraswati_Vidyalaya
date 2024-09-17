@@ -3,33 +3,31 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:padding="16dp">
+    android:padding="16dp"
+    android:background="#FFF4E1">
 
     <Button
         android:id="@+id/button_upload_pdf"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Upload PDF" />
-
-    <Button
-        android:id="@+id/button_delete_pdf"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Delete PDF"
-        android:layout_marginTop="8dp" />
+        android:text="Upload PDF"
+        android:layout_gravity="center"
+        android:backgroundTint="#FF896B"
+        android:textColor="#FFFFFF" />
 
     <ListView
         android:id="@+id/list_view_uploaded_pdfs"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:choiceMode="multipleChoice"
-    android:dividerHeight="1dp"/>
+
+        android:divider="@android:color/darker_gray"
+        android:dividerHeight="1dp" />
 
     <ProgressBar
         android:id="@+id/progress_bar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
+        android:layout_gravity="center"
         android:visibility="gone"
         style="?android:attr/progressBarStyleLarge" />
 

@@ -1,0 +1,14 @@
+<!-- res/menu/menu_action_mode.xml -->
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/action_delete"
+        android:title="Delete"
+        android:icon="@android:drawable/ic_menu_delete"
+        app:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/action_rename"
+        android:title="Rename"
+        android:icon="@android:drawable/ic_menu_edit"
+        app:showAsAction="ifRoom" />
+</menu>
