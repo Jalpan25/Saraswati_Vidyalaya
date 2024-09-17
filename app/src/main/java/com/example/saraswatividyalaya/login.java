@@ -305,6 +305,11 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 public class login extends AppCompatActivity {
 
@@ -370,27 +375,55 @@ public class login extends AppCompatActivity {
         });
     }
 
-    // Method to log in the user
     private void loginUser(String email, String password) {
+        Log.d("LoginDebug", "Attempting login with email: " + email);
+
         mAuth.signInWithEmailAndPassword(email, password)
                 .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()) {
-                            // Sign in success, update UI with the signed-in user's information
                             FirebaseUser user = mAuth.getCurrentUser();
-                            Toast.makeText(login.this, "Login Successful", Toast.LENGTH_SHORT).show();
+                            Log.d("LoginDebug", "Login successful for email: " + email);
 
-                            // Redirect to home page
-                            Intent intent = new Intent(login.this, home_page.class);
-                            intent.putExtra("userEmail", user.getEmail());
-                            startActivity(intent);
-                            finish(); // Close login activity
+                            String userEmail = user.getEmail();
+
+                            // Fetch Roll Number based on the email
+                            DatabaseReference dbRef = FirebaseDatabase.getInstance().getReference("Students");
+                            dbRef.orderByChild("email1").equalTo(userEmail)
+                                    .addListenerForSingleValueEvent(new ValueEventListener() {
+                                        @Override
+                                        public void onDataChange(@NonNull DataSnapshot snapshot) {
+                                            Log.d("LoginDebug", "Snapshot exists: " + snapshot.exists());
+                                            if (snapshot.exists()) {
+                                                for (DataSnapshot data : snapshot.getChildren()) {
+                                                    Log.d("LoginDebug", "Data found: " + data.getValue());
+                                                    String rollNo = data.child("rollno1").getValue(String.class);
+                                                    Log.d("LoginDebug", "Roll number found: " + rollNo);
+
+                                                    // Redirect to home_page and pass roll number
+                                                    Intent intent = new Intent(login.this, home_page.class);
+                                                    intent.putExtra("rollNo", rollNo);
+                                                    Log.d("LoginDebug", "Roll number to pass: " + rollNo);
+
+                                                    startActivity(intent);
+                                                    finish(); // Close login activity
+                                                }
+                                            } else {
+                                                Log.e("LoginDebug", "No student data found for email: " + userEmail);
+                                                Toast.makeText(login.this, "No student record found", Toast.LENGTH_LONG).show();
+                                            }
+                                        }
+
+                                        @Override
+                                        public void onCancelled(@NonNull DatabaseError error) {
+                                            Log.e("LoginDebug", "Database error: " + error.getMessage());
+                                        }
+                                    });
                         } else {
-                            // If sign-in fails, display a message to the user
                             String errorMessage = task.getException().getMessage();
+                            Log.e("LoginDebug", "Authentication failed: " + errorMessage);
                             Toast.makeText(login.this, "Authentication Failed: " + errorMessage, Toast.LENGTH_LONG).show();
-                            Log.e("LoginError", "Login Failed: " + errorMessage);
                         }
                     }
                 });
