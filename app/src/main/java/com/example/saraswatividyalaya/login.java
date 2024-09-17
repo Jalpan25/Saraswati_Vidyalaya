@@ -320,6 +320,17 @@ public class login extends AppCompatActivity {
         // Initialize Firebase Auth
         mAuth = FirebaseAuth.getInstance();
 
+        // Check if the user is already logged in
+        FirebaseUser currentUser = mAuth.getCurrentUser();
+        if (currentUser != null) {
+            // User is already logged in, redirect to the home page
+            Intent intent = new Intent(login.this, home_page.class);
+            intent.putExtra("userEmail", currentUser.getEmail());
+            startActivity(intent);
+            finish(); // Close the login activity
+        }
+
+        // Initialize views
         emailEditText = findViewById(R.id.usernameEditText);
         passwordEditText = findViewById(R.id.passwordEditText);
         loginButton = findViewById(R.id.loginButton);
@@ -332,6 +343,7 @@ public class login extends AppCompatActivity {
                 String email = emailEditText.getText().toString().trim();
                 String password = passwordEditText.getText().toString().trim();
 
+                // Validate inputs
                 if (TextUtils.isEmpty(email)) {
                     emailEditText.setError("Email is required.");
                     return;
@@ -342,6 +354,7 @@ public class login extends AppCompatActivity {
                     return;
                 }
 
+                // Proceed with login
                 loginUser(email, password);
             }
         });
@@ -357,23 +370,24 @@ public class login extends AppCompatActivity {
         });
     }
 
+    // Method to log in the user
     private void loginUser(String email, String password) {
         mAuth.signInWithEmailAndPassword(email, password)
                 .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()) {
-                            // Sign in success
+                            // Sign in success, update UI with the signed-in user's information
                             FirebaseUser user = mAuth.getCurrentUser();
                             Toast.makeText(login.this, "Login Successful", Toast.LENGTH_SHORT).show();
 
-                            // Redirect to the home page
+                            // Redirect to home page
                             Intent intent = new Intent(login.this, home_page.class);
                             intent.putExtra("userEmail", user.getEmail());
                             startActivity(intent);
-                            finish(); // Prevent back navigation to login
+                            finish(); // Close login activity
                         } else {
-                            // Capture detailed error message
+                            // If sign-in fails, display a message to the user
                             String errorMessage = task.getException().getMessage();
                             Toast.makeText(login.this, "Authentication Failed: " + errorMessage, Toast.LENGTH_LONG).show();
                             Log.e("LoginError", "Login Failed: " + errorMessage);

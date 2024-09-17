@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:title="Check for Updates"
+        android:id="@+id/check_for_Updates"
+
+        />
+    <item android:title="Logout"
+        android:id="@+id/Logout"/>
+</menu>

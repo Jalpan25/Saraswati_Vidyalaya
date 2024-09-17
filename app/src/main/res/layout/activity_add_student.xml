@@ -1,13 +1,13 @@
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#008080"> <!-- Background color -->
+    android:background="#008080">
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="20dp"
-        android:background="@drawable/rounded_corner_background"> <!-- Rounded corner background -->
+        android:background="@drawable/rounded_corner_background">
 
         <!-- Title TextView -->
         <TextView
@@ -97,7 +97,7 @@
             android:layout_marginTop="10dp"
             android:layout_marginEnd="20dp"
             android:drawableLeft="@drawable/baseline_password_24"
-            android:hint="Enter Password "
+            android:hint="Enter Password"
             android:inputType="textPassword"
             android:minHeight="48dp"
             android:padding="16dp"
@@ -124,7 +124,6 @@
             android:layout_marginStart="20dp"
             android:layout_marginTop="10dp"
             android:layout_marginEnd="20dp"
-
             android:hint="MM/DD/YYYY"
             android:inputType="date"
             android:minHeight="48dp"
@@ -254,12 +253,37 @@
             android:padding="16dp"
             android:textColor="#4A4A4A" />
 
+        <!-- Student ImageView (placed below Standard field) -->
+        <ImageView
+            android:id="@+id/studentImageView"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_below="@id/standardEditText"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="20dp"
+            android:src="@drawable/download"
+            android:contentDescription="Student Image"
+            android:scaleType="centerCrop"
+             />
+
+        <!-- Button to Select Image -->
+        <Button
+            android:id="@+id/selectImageButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/studentImageView"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="10dp"
+            android:text="Select Image"
+            android:textColor="#FFFFFF"
+            android:backgroundTint="#008080" />
+
         <!-- Signup Button -->
         <Button
             android:id="@+id/loginButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/standardEditText"
+            android:layout_below="@id/selectImageButton"
             android:layout_marginStart="20dp"
             android:layout_marginTop="20dp"
             android:layout_marginEnd="20dp"
@@ -267,5 +291,6 @@
             android:backgroundTint="#008080"
             android:text="Create Account"
             android:textColor="#4A4A4A" />
+
     </RelativeLayout>
 </ScrollView>
