@@ -1,15 +1,16 @@
 package com.example.saraswatividyalaya;
 
 import android.app.DatePickerDialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.DatePicker;
+import android.widget.GridLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.google.android.flexbox.FlexboxLayout;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
@@ -22,7 +23,7 @@ import java.util.Map;
 
 public class Attendance_teacher extends AppCompatActivity {
 
-    private FlexboxLayout rollNumberGrid;
+    private GridLayout rollNumberGrid;
     private Button absentButton, uploadAttendanceButton, dateSelectButton;
     private TextView dateText;
     private Map<Integer, Boolean> attendanceMap = new HashMap<>();
@@ -56,7 +57,13 @@ public class Attendance_teacher extends AppCompatActivity {
         absentButton.setOnClickListener(v -> markAbsent());
         uploadAttendanceButton.setOnClickListener(v -> uploadAttendance());
     }
-
+    @Override
+    public void onBackPressed() {
+        // Navigate to the home page when the back button is pressed
+        Intent intent = new Intent(Attendance_teacher.this, teacher_home.class);
+        startActivity(intent);
+        finish(); // Finish this activity so it doesn't remain in the back stack
+    }
     private void showDatePicker() {
         final Calendar calendar = Calendar.getInstance();
         int year = calendar.get(Calendar.YEAR);

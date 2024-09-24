@@ -27,6 +27,7 @@ public class StudentLibraryActivity extends AppCompatActivity {
     private ArrayAdapter<String> adapter;
 
     @SuppressLint("MissingInflatedId")
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.Toast;
 
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -40,36 +41,41 @@ public class home_page extends AppCompatActivity implements View.OnClickListener
         logout.setOnClickListener(this);
     }
 
+
     @Override
     public void onClick(View v) {
         Intent i;
-        String rollNo = getIntent().getStringExtra("rollNo");
 
-        Log.d("HomePageDebug", "Received roll number: " + rollNo);
+        // Retrieve rollNo from intent or SharedPreferences
+        String rollNo = getIntent().getStringExtra("rollNo");
+        if (rollNo == null || rollNo.isEmpty()) {
+            rollNo = getSharedPreferences("userDetails", MODE_PRIVATE).getString("rollNo", null);
+        }
+
+        if (rollNo == null) {
+            Toast.makeText(this, "Roll number not provided", Toast.LENGTH_SHORT).show();
+            return;
+        }
+
         if (v.getId() == R.id.c1) {
             i = new Intent(home_page.this, personal_details.class);
             startActivity(i);
             finish();
-        }
-        else if (v.getId() == R.id.c2) {
-
+        } else if (v.getId() == R.id.c2) {
             i = new Intent(home_page.this, student_attendance.class);
             i.putExtra("rollNo", rollNo);
-            Log.d("HomePageDebug", "Received roll number: " + rollNo);
             startActivity(i);
             finish();
-        }
-        else if (v.getId() == R.id.c6) {
+        } else if (v.getId() == R.id.c6) {
             FirebaseAuth.getInstance().signOut();
             i = new Intent(home_page.this, login.class);
             startActivity(i);
             finish();
-        }
-        else if (v.getId() == R.id.c4) {
+        } else if (v.getId() == R.id.c4) {
             i = new Intent(home_page.this, StudentLibraryActivity.class);
             startActivity(i);
             finish();
         }
-
     }
+
 }

@@ -2,6 +2,8 @@ package com.example.saraswatividyalaya;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Log;
@@ -29,7 +31,13 @@ public class student_attendance extends AppCompatActivity {
     private Button loadAttendanceButton;
     private static final String TAG = "StudentAttendance";
     private ImageView attendanceMarker;
-
+    @Override
+    public void onBackPressed() {
+        // Navigate to the home page when the back button is pressed
+        Intent intent = new Intent(student_attendance.this, home_page.class);
+        startActivity(intent);
+        finish(); // Finish this activity so it doesn't remain in the back stack
+    }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -43,11 +51,12 @@ public class student_attendance extends AppCompatActivity {
         studentRollNo = getIntent().getStringExtra("rollNo");
 
         if (studentRollNo == null || studentRollNo.isEmpty()) {
-            Log.e(TAG, "Roll number is null or empty");
+            // Log.e(TAG, "Roll number is null or empty");
             Toast.makeText(student_attendance.this, "No roll number provided", Toast.LENGTH_SHORT).show();
             finish(); // Exit the activity if no roll number is provided
             return;
         }
+
 
         // Set date change listener for the CalendarView
         calendarView.setOnDateChangeListener((view, year, month, dayOfMonth) -> {
